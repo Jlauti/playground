@@ -1,0 +1,19 @@
+{
+  "name": "@anime-autobattler/tools",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "benchmark": "tsx src/benchmark.ts"
+  },
+  "dependencies": {
+    "@anime-autobattler/content": "workspace:*",
+    "@anime-autobattler/sim": "workspace:*",
+    "tsx": "^4.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3"
+  }
+}
+
