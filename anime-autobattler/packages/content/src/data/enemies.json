@@ -1,0 +1,55 @@
+[
+  {
+    "id": "enemy_slime",
+    "name": "Slime",
+    "description": "A weak slime.",
+    "baseStats": { "hp": 30, "atk": 3, "as": 0.8 },
+    "scaling": { "hp": 5, "atk": 1 }
+  },
+  {
+    "id": "enemy_goblin",
+    "name": "Goblin",
+    "description": "A fast goblin.",
+    "baseStats": { "hp": 40, "atk": 5, "as": 1.2 },
+    "scaling": { "hp": 8, "atk": 1.5 }
+  },
+  {
+    "id": "enemy_orc",
+    "name": "Orc",
+    "description": "A tough orc.",
+    "baseStats": { "hp": 80, "atk": 8, "as": 0.6, "arm": 5 },
+    "scaling": { "hp": 15, "atk": 2 }
+  },
+  {
+    "id": "enemy_wolf",
+    "name": "Wolf",
+    "description": "Attacks quickly.",
+    "baseStats": { "hp": 50, "atk": 6, "as": 1.5, "critChance": 10 },
+    "scaling": { "hp": 10, "atk": 1.5 }
+  },
+  {
+    "id": "enemy_kurogane_warden",
+    "name": "Kurogane Warden",
+    "description": "The Act 1 Boss.",
+    "isBoss": true,
+    "phases": 2,
+    "baseStats": { "hp": 1000, "atk": 15, "as": 0.8, "arm": 20 },
+    "scaling": { "hp": 0, "atk": 0 },
+    "abilities": [
+      {
+        "name": "Iron Shield",
+        "trigger": "cooldown",
+        "effect": "shield",
+        "value": 100,
+        "cooldown": 10
+      },
+      {
+        "name": "Enrage",
+        "trigger": "phaseChange",
+        "effect": "buffStats",
+        "value": 0,
+        "params": { "as": 0.5, "applyVulnerable": true }
+      }
+    ]
+  }
+]

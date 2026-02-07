@@ -1,0 +1,82 @@
+[
+  {
+    "waveNumber": 1,
+    "enemies": [
+      { "enemyId": "enemy_slime", "count": 2 }
+    ],
+    "rewardTier": "low"
+  },
+  {
+    "waveNumber": 2,
+    "enemies": [
+      { "enemyId": "enemy_slime", "count": 3 },
+      { "enemyId": "enemy_goblin", "count": 1 }
+    ],
+    "rewardTier": "low"
+  },
+  {
+    "waveNumber": 3,
+    "enemies": [
+      { "enemyId": "enemy_goblin", "count": 3 }
+    ],
+    "rewardTier": "medium"
+  },
+  {
+    "waveNumber": 4,
+    "enemies": [
+      { "enemyId": "enemy_orc", "count": 1 },
+      { "enemyId": "enemy_slime", "count": 2 }
+    ],
+    "rewardTier": "medium"
+  },
+  {
+    "waveNumber": 5,
+    "enemies": [
+      { "enemyId": "enemy_wolf", "count": 3, "elite": true, "affixes": ["Frenzied"] }
+    ],
+    "rewardTier": "high"
+  },
+  {
+    "waveNumber": 6,
+    "enemies": [
+        { "enemyId": "enemy_orc", "count": 2 }
+    ],
+    "rewardTier": "medium"
+  },
+  {
+    "waveNumber": 7,
+    "enemies": [
+        { "enemyId": "enemy_goblin", "count": 5 }
+    ],
+    "rewardTier": "medium"
+  },
+  {
+    "waveNumber": 8,
+    "enemies": [
+        { "enemyId": "enemy_wolf", "count": 2 },
+        { "enemyId": "enemy_orc", "count": 1, "elite": true, "affixes": ["Armored"] }
+    ],
+    "rewardTier": "high"
+  },
+  {
+    "waveNumber": 9,
+    "enemies": [
+        { "enemyId": "enemy_slime", "count": 3, "elite": true, "affixes": ["Toxic", "Volatile"] }
+    ],
+    "rewardTier": "high"
+  },
+  {
+    "waveNumber": 10,
+    "enemies": [
+        { "enemyId": "enemy_slime", "count": 1 }
+    ],
+    "rewardTier": "low"
+  },
+  {
+    "waveNumber": 11,
+    "enemies": [
+      { "enemyId": "enemy_kurogane_warden", "count": 1, "level": 5 }
+    ],
+    "rewardTier": "boss"
+  }
+]

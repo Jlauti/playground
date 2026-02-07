@@ -1,0 +1,21 @@
+{
+  "name": "@anime-autobattler/tools",
+  "version": "0.0.0",
+  "type": "module",
+  "bin": {
+    "sim-benchmark": "./dist/benchmark.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "sim:benchmark": "node dist/benchmark.js"
+  },
+  "dependencies": {
+    "@anime-autobattler/sim": "workspace:*",
+    "@anime-autobattler/content": "workspace:*",
+    "commander": "^11.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}

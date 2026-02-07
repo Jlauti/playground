@@ -1,0 +1,93 @@
+[
+  {
+    "id": "skill_frenzy_loop",
+    "name": "Frenzy Loop",
+    "description": "Each crit reduces all cooldowns by 0.2s. Internal CD 0.5s.",
+    "branch": "Blade Dance",
+    "tier": 5,
+    "maxRank": 1,
+    "cost": 1,
+    "keystone": true,
+    "effects": [
+      {
+        "type": "trigger",
+        "trigger": "onCrit",
+        "action": "reduceCooldowns",
+        "params": { "amount": 0.2, "internalCd": 0.5 }
+      }
+    ]
+  },
+  {
+    "id": "skill_blade_mastery",
+    "name": "Blade Mastery",
+    "description": "Increases Attack Speed and Crit Chance.",
+    "branch": "Blade Dance",
+    "tier": 1,
+    "maxRank": 5,
+    "cost": 1,
+    "effects": [
+      { "type": "stat", "stat": "as", "value": 0.05 },
+      { "type": "stat", "stat": "critChance", "value": 2 }
+    ]
+  },
+  {
+    "id": "skill_hemorrhage_engine",
+    "name": "Hemorrhage Engine",
+    "description": "Every 5 bleed ticks triggers a free basic attack.",
+    "branch": "Bloodcraft",
+    "tier": 5,
+    "maxRank": 1,
+    "cost": 1,
+    "keystone": true,
+    "effects": [
+      {
+        "type": "trigger",
+        "trigger": "onBleedTick",
+        "action": "triggerAttack",
+        "params": { "threshold": 5 }
+      }
+    ]
+  },
+  {
+    "id": "skill_blood_rite",
+    "name": "Blood Rite",
+    "description": "Increases damage against bleeding enemies.",
+    "branch": "Bloodcraft",
+    "tier": 1,
+    "maxRank": 5,
+    "cost": 1,
+    "effects": [
+      { "type": "passive", "stat": "damageVsBleeding", "value": 5 }
+    ]
+  },
+  {
+    "id": "skill_unbreakable",
+    "name": "Unbreakable",
+    "description": "When below 30% HP: Gain 20% DR and +15% Lifesteal. Once per wave.",
+    "branch": "Iron Veil",
+    "tier": 5,
+    "maxRank": 1,
+    "cost": 1,
+    "keystone": true,
+    "effects": [
+      {
+        "type": "trigger",
+        "trigger": "onLowHp",
+        "action": "buffStats",
+        "params": { "threshold": 0.3, "duration": "wave", "stats": { "damageReduction": 20, "lifesteal": 15 } }
+      }
+    ]
+  },
+  {
+    "id": "skill_iron_skin",
+    "name": "Iron Skin",
+    "description": "Increases Armor.",
+    "branch": "Iron Veil",
+    "tier": 1,
+    "maxRank": 5,
+    "cost": 1,
+    "effects": [
+      { "type": "stat", "stat": "arm", "value": 5 }
+    ]
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "item_rusty_sword",
+    "name": "Rusty Sword",
+    "description": "A basic sword.",
+    "rarity": "Common",
+    "slot": "Weapon",
+    "stats": { "atk": 5 }
+  },
+  {
+    "id": "item_leather_vest",
+    "name": "Leather Vest",
+    "description": "Basic protection.",
+    "rarity": "Common",
+    "slot": "Armor",
+    "stats": { "arm": 3, "hp": 20 }
+  },
+  {
+    "id": "item_lucky_charm",
+    "name": "Lucky Charm",
+    "description": "Slightly luckier.",
+    "rarity": "Common",
+    "slot": "Trinket",
+    "stats": { "critChance": 5 }
+  },
+  {
+    "id": "item_katana",
+    "name": "Katana",
+    "description": "Sharp and fast.",
+    "rarity": "Rare",
+    "slot": "Weapon",
+    "stats": { "atk": 12, "as": 0.1, "critChance": 5 }
+  },
+  {
+    "id": "item_plate_mail",
+    "name": "Plate Mail",
+    "description": "Heavy armor.",
+    "rarity": "Rare",
+    "slot": "Armor",
+    "stats": { "arm": 10, "maxHp": 50 }
+  },
+  {
+    "id": "item_vampire_fang",
+    "name": "Vampire Fang",
+    "description": "Drains life.",
+    "rarity": "Epic",
+    "slot": "Trinket",
+    "stats": { "lifesteal": 5, "atk": 5 }
+  },
+  {
+    "id": "item_cursed_blade",
+    "name": "Cursed Blade",
+    "description": "High damage but risky.",
+    "rarity": "Legendary",
+    "slot": "Weapon",
+    "stats": { "atk": 40, "critMultiplier": 0.5, "hp": -50 }
+  }
+]

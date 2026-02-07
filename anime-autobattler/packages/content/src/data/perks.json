@@ -1,0 +1,26 @@
+[
+  {
+    "id": "perk_vitality",
+    "name": "Vitality",
+    "description": "+20 Max HP",
+    "stats": { "maxHp": 20 }
+  },
+  {
+    "id": "perk_sharpness",
+    "name": "Sharpness",
+    "description": "+5 Attack",
+    "stats": { "atk": 5 }
+  },
+  {
+    "id": "perk_haste",
+    "name": "Haste",
+    "description": "+10% Attack Speed",
+    "stats": { "as": 0.1 }
+  },
+  {
+    "id": "perk_thick_skin",
+    "name": "Thick Skin",
+    "description": "+5 Armor",
+    "stats": { "arm": 5 }
+  }
+]
