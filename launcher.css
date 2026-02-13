@@ -1,0 +1,798 @@
+/* ============================================================================
+   LAUTI'S ARCADE - Retro Game Launcher Styles
+   ============================================================================ */
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --neon-pink: #ff004d;
+    --neon-blue: #29adff;
+    --neon-green: #00e756;
+    --neon-yellow: #ffec27;
+    --neon-purple: #7e2553;
+    --neon-orange: #ffa300;
+    --dark-bg: #0a0a12;
+    --dark-surface: #12121f;
+    --dark-card: #1a1a2e;
+    --crt-glow: rgba(41, 173, 255, 0.08);
+    --pixel-font: 'Press Start 2P', monospace;
+    --terminal-font: 'VT323', monospace;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--pixel-font);
+    background: var(--dark-bg);
+    color: #c7c7d4;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* --- CRT Scanline Overlay --- */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.08) 2px,
+            rgba(0, 0, 0, 0.08) 4px);
+}
+
+.scanlines::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center,
+            transparent 50%,
+            rgba(0, 0, 0, 0.4) 100%);
+    pointer-events: none;
+}
+
+/* --- Floating Pixel Background --- */
+.pixel-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.floating-pixel {
+    position: absolute;
+    bottom: -10px;
+    opacity: 0.4;
+    animation: floatUp linear infinite;
+    image-rendering: pixelated;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.5;
+    }
+
+    90% {
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* --- Arcade Cabinet Container --- */
+.arcade-cabinet {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 20px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Header --- */
+.arcade-header {
+    text-align: center;
+    padding: 30px 0 20px;
+    position: relative;
+}
+
+.coin-slot {
+    display: inline-block;
+    font-family: var(--pixel-font);
+    font-size: 0.5rem;
+    color: var(--neon-yellow);
+    background: var(--dark-surface);
+    border: 2px solid var(--neon-yellow);
+    padding: 4px 16px;
+    margin-bottom: 16px;
+    animation: pulse-glow-yellow 2s ease-in-out infinite;
+    letter-spacing: 2px;
+}
+
+.arcade-title {
+    font-family: var(--pixel-font);
+    font-size: clamp(1.2rem, 4vw, 2.2rem);
+    color: var(--neon-pink);
+    text-shadow:
+        0 0 10px var(--neon-pink),
+        0 0 30px var(--neon-pink),
+        0 0 60px rgba(255, 0, 77, 0.4),
+        2px 2px 0px var(--neon-purple);
+    padding: 10px 0;
+    letter-spacing: 3px;
+    line-height: 1.5;
+}
+
+.flicker {
+    animation: flicker 3s ease-in-out infinite;
+}
+
+@keyframes flicker {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0.5;
+    }
+
+    85% {
+        opacity: 1;
+    }
+}
+
+.subtitle {
+    font-family: var(--terminal-font);
+    font-size: 1.5rem;
+    color: var(--neon-green);
+    text-shadow: 0 0 8px var(--neon-green);
+    letter-spacing: 6px;
+    margin-top: 8px;
+    min-height: 1.5em;
+}
+
+.credit-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--pixel-font);
+    font-size: 0.6rem;
+    margin-top: 16px;
+    background: var(--dark-surface);
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 6px 16px;
+}
+
+.credit-counter span:first-child {
+    color: #888;
+}
+
+.credits {
+    color: var(--neon-green);
+    text-shadow: 0 0 8px var(--neon-green);
+    font-size: 0.8rem;
+}
+
+.credits.flash {
+    color: var(--neon-yellow);
+    text-shadow: 0 0 20px var(--neon-yellow);
+}
+
+/* --- Game Grid --- */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* --- Game Card --- */
+.game-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--dark-card);
+    border: 2px solid #2a2a40;
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.game-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#game-blocky::before {
+    background: linear-gradient(135deg, var(--neon-orange), var(--neon-pink));
+}
+
+#game-stickfighter::before {
+    background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+}
+
+#game-stickman::before {
+    background: linear-gradient(135deg, var(--neon-green), var(--neon-blue));
+}
+
+#game-anime::before {
+    background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+}
+
+.game-card:hover::before {
+    opacity: 1;
+}
+
+.game-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: transparent;
+}
+
+.game-card:hover .insert-coin-prompt {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.game-card:hover .card-screen {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.game-card:active {
+    transform: translateY(-2px) scale(1.01);
+}
+
+/* --- Card Screen (Preview Area) --- */
+.card-screen {
+    background: #0d0d1a;
+    margin: 12px 12px 0;
+    border-radius: 4px;
+    border: 2px solid #222;
+    aspect-ratio: 16 / 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.card-screen::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.02) 0%,
+            transparent 50%,
+            rgba(0, 0, 0, 0.1) 100%);
+    pointer-events: none;
+}
+
+/* --- Game Previews (ASCII Art) --- */
+.game-preview {
+    font-family: var(--terminal-font);
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Blocky Blaster Preview */
+.blocky-preview {
+    color: var(--neon-orange);
+}
+
+.blocky-preview .preview-ship {
+    font-size: 2rem;
+    color: var(--neon-green);
+    animation: ship-hover 2s ease-in-out infinite;
+}
+
+.blocky-preview .preview-enemies {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    color: var(--neon-pink);
+    font-size: 1.2rem;
+    animation: enemies-sway 3s ease-in-out infinite;
+}
+
+.blocky-preview .preview-bullets {
+    color: var(--neon-yellow);
+    font-size: 0.8rem;
+    letter-spacing: 20px;
+    animation: bullets-flash 0.5s ease-in-out infinite;
+}
+
+@keyframes ship-hover {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes enemies-sway {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+@keyframes bullets-flash {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+/* Fighter Preview */
+.fighter-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.preview-fighter {
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+.preview-fighter.left {
+    color: var(--neon-blue);
+    animation: fighter-bounce-left 1.5s ease-in-out infinite;
+}
+
+.preview-fighter.right {
+    color: var(--neon-pink);
+    animation: fighter-bounce-right 1.5s ease-in-out infinite 0.5s;
+}
+
+.preview-vs {
+    font-family: var(--pixel-font);
+    font-size: 0.9rem;
+    color: var(--neon-yellow);
+    text-shadow: 0 0 10px var(--neon-yellow);
+    animation: vs-pulse 1s ease-in-out infinite;
+}
+
+@keyframes fighter-bounce-left {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(4px);
+    }
+}
+
+@keyframes fighter-bounce-right {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-4px);
+    }
+}
+
+@keyframes vs-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Stickman Arena Preview */
+.stickman-preview {
+    color: var(--neon-green);
+}
+
+.stickman-preview .preview-biome {
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+}
+
+.stickman-preview .preview-fighter.center {
+    animation: stickman-attack 2s ease-in-out infinite;
+}
+
+.stickman-preview .preview-animals {
+    font-size: 1rem;
+    letter-spacing: 6px;
+    margin-top: 4px;
+    animation: animals-walk 4s linear infinite;
+}
+
+@keyframes stickman-attack {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-5deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes animals-walk {
+    0% {
+        transform: translateX(-10px);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(-10px);
+    }
+}
+
+/* Anime Autobattler Preview */
+.anime-preview {
+    color: var(--neon-purple);
+}
+
+.anime-preview .preview-sword {
+    font-size: 2rem;
+    animation: sword-spin 3s linear infinite;
+}
+
+.anime-preview .preview-skills {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin: 6px 0;
+}
+
+.anime-preview .preview-skills span {
+    animation: skill-glow 2s ease-in-out infinite;
+}
+
+.anime-preview .preview-skills span:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.anime-preview .preview-skills span:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.anime-preview .preview-waves {
+    font-family: var(--pixel-font);
+    font-size: 0.5rem;
+    color: var(--neon-pink);
+    text-shadow: 0 0 6px var(--neon-pink);
+    letter-spacing: 2px;
+}
+
+@keyframes sword-spin {
+
+    0%,
+    100% {
+        transform: rotate(-10deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(10deg) scale(1.1);
+    }
+}
+
+@keyframes skill-glow {
+
+    0%,
+    100% {
+        filter: brightness(1);
+        transform: scale(1);
+    }
+
+    50% {
+        filter: brightness(1.5);
+        transform: scale(1.15);
+    }
+}
+
+/* --- Card Info --- */
+.card-info {
+    padding: 12px 14px;
+    flex: 1;
+}
+
+.game-title {
+    font-family: var(--pixel-font);
+    font-size: 0.65rem;
+    color: #fff;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.game-genre {
+    display: inline-block;
+    font-family: var(--pixel-font);
+    font-size: 0.45rem;
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+#game-blocky .game-genre {
+    background: rgba(255, 163, 0, 0.2);
+    color: var(--neon-orange);
+    border: 1px solid var(--neon-orange);
+}
+
+#game-stickfighter .game-genre {
+    background: rgba(41, 173, 255, 0.2);
+    color: var(--neon-blue);
+    border: 1px solid var(--neon-blue);
+}
+
+#game-stickman .game-genre {
+    background: rgba(0, 231, 86, 0.2);
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+}
+
+#game-anime .game-genre {
+    background: rgba(126, 37, 83, 0.3);
+    color: var(--neon-pink);
+    border: 1px solid var(--neon-pink);
+}
+
+.game-desc {
+    font-family: var(--terminal-font);
+    font-size: 0.95rem;
+    color: #999;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.game-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--pixel-font);
+    font-size: 0.45rem;
+}
+
+.players {
+    background: rgba(41, 173, 255, 0.15);
+    color: var(--neon-blue);
+    padding: 2px 6px;
+    border-radius: 2px;
+}
+
+.difficulty {
+    color: var(--neon-yellow);
+    letter-spacing: 2px;
+}
+
+/* --- Insert Coin Prompt --- */
+.insert-coin-prompt {
+    font-family: var(--pixel-font);
+    font-size: 0.55rem;
+    text-align: center;
+    padding: 10px;
+    color: var(--neon-yellow);
+    text-shadow: 0 0 8px var(--neon-yellow);
+    background: rgba(255, 236, 39, 0.05);
+    border-top: 1px solid rgba(255, 236, 39, 0.2);
+    opacity: 0;
+    transform: translateY(4px);
+    transition: all 0.2s ease;
+    animation: prompt-blink 1s ease-in-out infinite;
+}
+
+@keyframes prompt-blink {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.game-card:hover .insert-coin-prompt {
+    animation: prompt-blink 1s ease-in-out infinite;
+}
+
+/* --- Footer --- */
+.arcade-footer {
+    text-align: center;
+    padding: 30px 0 10px;
+    border-top: 1px solid #222;
+    margin-top: 20px;
+}
+
+.footer-text {
+    font-family: var(--pixel-font);
+    font-size: 0.5rem;
+    color: #666;
+    letter-spacing: 2px;
+}
+
+.blink {
+    animation: blink-arrow 1s step-end infinite;
+    color: var(--neon-pink);
+}
+
+@keyframes blink-arrow {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.high-scores-link {
+    margin-top: 12px;
+}
+
+.pixel-art {
+    font-size: 0.3rem;
+    letter-spacing: 4px;
+    color: #333;
+}
+
+/* --- Pulsing Glows --- */
+@keyframes pulse-glow-yellow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(255, 236, 39, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 15px rgba(255, 236, 39, 0.6);
+    }
+}
+
+/* --- Rainbow Mode (Konami Code) --- */
+.rainbow-mode .arcade-title {
+    animation: rainbow 2s linear infinite;
+}
+
+@keyframes rainbow {
+    0% {
+        color: #ff004d;
+        text-shadow: 0 0 20px #ff004d;
+    }
+
+    20% {
+        color: #ffa300;
+        text-shadow: 0 0 20px #ffa300;
+    }
+
+    40% {
+        color: #ffec27;
+        text-shadow: 0 0 20px #ffec27;
+    }
+
+    60% {
+        color: #00e756;
+        text-shadow: 0 0 20px #00e756;
+    }
+
+    80% {
+        color: #29adff;
+        text-shadow: 0 0 20px #29adff;
+    }
+
+    100% {
+        color: #ff004d;
+        text-shadow: 0 0 20px #ff004d;
+    }
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    .game-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .arcade-title {
+        font-size: 1rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        letter-spacing: 3px;
+    }
+
+    .arcade-cabinet {
+        padding: 10px 12px 30px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

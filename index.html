@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🕹️ Lauti's Arcade</title>
+    <meta name="description" content="A retro arcade launcher for family-made web games">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="launcher.css">
+</head>
+
+<body>
+    <!-- Scanline overlay -->
+    <div class="scanlines"></div>
+    
+    <!-- Floating pixels background -->
+    <div class="pixel-bg" id="pixel-bg"></div>
+
+    <div class="arcade-cabinet">
+        <header class="arcade-header">
+            <div class="coin-slot">INSERT COIN</div>
+            <h1 class="arcade-title">
+                <span class="flicker">🕹️</span>
+                LAUTI'S ARCADE
+                <span class="flicker">🕹️</span>
+            </h1>
+            <p class="subtitle">SELECT YOUR GAME</p>
+            <div class="credit-counter">
+                <span>CREDIT</span>
+                <span class="credits" id="credits">99</span>
+            </div>
+        </header>
+
+        <main class="game-grid">
+            <!-- Blocky Blaster -->
+            <a href="/BlockyBlaster/" class="game-card" id="game-blocky">
+                <div class="card-screen">
+                    <div class="game-preview blocky-preview">
+                        <div class="preview-ship">▲</div>
+                        <div class="preview-enemies">
+                            <span>■</span><span>■</span><span>■</span>
+                        </div>
+                        <div class="preview-bullets">
+                            <span>|</span><span>|</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h2 class="game-title">BLOCKY BLASTER</h2>
+                    <div class="game-genre">SHOOTER</div>
+                    <p class="game-desc">Defend against blocky invaders! Waves, power-ups & boss battles.</p>
+                    <div class="game-meta">
+                        <span class="players">1P</span>
+                        <span class="difficulty">★★★☆☆</span>
+                    </div>
+                </div>
+                <div class="insert-coin-prompt">► PRESS START ◄</div>
+            </a>
+
+            <!-- Stick Fighter Arena -->
+            <a href="/StickFighterArena/" class="game-card" id="game-stickfighter">
+                <div class="card-screen">
+                    <div class="game-preview fighter-preview">
+                        <div class="preview-fighter left">
+                            <div class="stick-head">○</div>
+                            <div class="stick-body">├┤</div>
+                            <div class="stick-legs">/\</div>
+                        </div>
+                        <div class="preview-vs">VS</div>
+                        <div class="preview-fighter right">
+                            <div class="stick-head">○</div>
+                            <div class="stick-body">├┤</div>
+                            <div class="stick-legs">/\</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h2 class="game-title">STICK FIGHTER</h2>
+                    <div class="game-genre">FIGHTING</div>
+                    <p class="game-desc">2-player arena combat! Mouse-aimed attacks & weapon pickups.</p>
+                    <div class="game-meta">
+                        <span class="players">2P</span>
+                        <span class="difficulty">★★☆☆☆</span>
+                    </div>
+                </div>
+                <div class="insert-coin-prompt">► PRESS START ◄</div>
+            </a>
+
+            <!-- Stickman Arena -->
+            <a href="/StickmanArena/" class="game-card" id="game-stickman">
+                <div class="card-screen">
+                    <div class="game-preview stickman-preview">
+                        <div class="preview-biome">🌲🏜️🌊🕳️</div>
+                        <div class="preview-fighter center">
+                            <div class="stick-head">○</div>
+                            <div class="stick-body">├⚔┤</div>
+                            <div class="stick-legs">/\</div>
+                        </div>
+                        <div class="preview-animals">🦙🐷🐴</div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h2 class="game-title">STICKMAN ARENA</h2>
+                    <div class="game-genre">ACTION RPG</div>
+                    <p class="game-desc">4 biomes, 4 weapons, animals & a shop system. Epic battles!</p>
+                    <div class="game-meta">
+                        <span class="players">1P</span>
+                        <span class="difficulty">★★★★☆</span>
+                    </div>
+                </div>
+                <div class="insert-coin-prompt">► PRESS START ◄</div>
+            </a>
+
+            <!-- Anime Autobattler -->
+            <a href="/AnimeAutobattler/" class="game-card" id="game-anime">
+                <div class="card-screen">
+                    <div class="game-preview anime-preview">
+                        <div class="preview-sword">⚔️</div>
+                        <div class="preview-skills">
+                            <span class="skill-blade">🗡️</span>
+                            <span class="skill-blood">🩸</span>
+                            <span class="skill-shield">🛡️</span>
+                        </div>
+                        <div class="preview-waves">WAVE 10</div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <h2 class="game-title">ANIME BATTLER</h2>
+                    <div class="game-genre">ROGUELITE</div>
+                    <p class="game-desc">Wave roguelite autobattler with skill trees, items & bosses!</p>
+                    <div class="game-meta">
+                        <span class="players">1P</span>
+                        <span class="difficulty">★★★★★</span>
+                    </div>
+                </div>
+                <div class="insert-coin-prompt">► PRESS START ◄</div>
+            </a>
+        </main>
+
+        <footer class="arcade-footer">
+            <div class="footer-text">
+                <span class="blink">»</span>
+                MADE WITH ❤️ BY THE LAUTI FAMILY
+                <span class="blink">«</span>
+            </div>
+            <div class="high-scores-link">
+                <span class="pixel-art">■ ■ ■ ■ ■ ■ ■ ■ ■ ■</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Floating pixel particles
+        const pixelBg = document.getElementById('pixel-bg');
+        const colors = ['#ff004d', '#29adff', '#00e756', '#ffec27', '#ff77a8', '#7e2553'];
+        
+        function createPixel() {
+            const pixel = document.createElement('div');
+            pixel.className = 'floating-pixel';
+            pixel.style.left = Math.random() * 100 + '%';
+            pixel.style.animationDuration = (3 + Math.random() * 7) + 's';
+            pixel.style.animationDelay = Math.random() * 5 + 's';
+            pixel.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            pixel.style.width = pixel.style.height = (2 + Math.random() * 4) + 'px';
+            pixelBg.appendChild(pixel);
+        }
+        
+        for (let i = 0; i < 40; i++) createPixel();
+
+        // Credit counter animation
+        const creditsEl = document.getElementById('credits');
+        let credits = 99;
+        
+        document.querySelectorAll('.game-card').forEach(card => {
+            card.addEventListener('click', () => {
+                if (credits > 0) {
+                    credits--;
+                    creditsEl.textContent = credits;
+                    creditsEl.classList.add('flash');
+                    setTimeout(() => creditsEl.classList.remove('flash'), 200);
+                }
+            });
+        });
+
+        // Konami code easter egg
+        const konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+        let konamiIndex = 0;
+        document.addEventListener('keydown', (e) => {
+            if (e.keyCode === konami[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konami.length) {
+                    credits = 99;
+                    creditsEl.textContent = credits;
+                    document.body.classList.add('rainbow-mode');
+                    konamiIndex = 0;
+                    setTimeout(() => document.body.classList.remove('rainbow-mode'), 5000);
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+
+        // Typing effect for subtitle
+        const subtitle = document.querySelector('.subtitle');
+        const text = subtitle.textContent;
+        subtitle.textContent = '';
+        let charIndex = 0;
+        function typeChar() {
+            if (charIndex < text.length) {
+                subtitle.textContent += text[charIndex];
+                charIndex++;
+                setTimeout(typeChar, 80);
+            }
+        }
+        setTimeout(typeChar, 500);
+    </script>
+</body>
+
+</html>
