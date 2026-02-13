@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stickman Arena</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="location-ui">PLAINS</div>
+
+    <div id="ui">
+        <div class="health-container">
+            <div class="name">PLAYER</div>
+            <div class="health-bar" id="hp-p1"></div>
+        </div>
+        <div style="font-weight: bold; color: #333; text-shadow: 1px 1px 0 #fff;">
+            Round: <span id="round-display">1</span> | Coins: <span id="coin-ui">0</span>
+        </div>
+        <div class="health-container">
+            <div class="name" style="right:0;">ENEMY</div>
+            <div class="health-bar" id="hp-p2" style="float:right; background:#3498db;"></div>
+        </div>
+    </div>
+
+    <div id="controls-hint">
+        WASD / Arrows to Move • SPACE to Jump • Z / J to Attack • Watch out for Llamas!
+    </div>
+
+    <!-- START SCREEN - Shown before first game -->
+    <div id="start-screen">
+        <h1 style="color: #e74c3c; text-shadow: 2px 2px 4px #000;">STICKMAN ARENA</h1>
+
+        <div style="margin: 20px 0;">
+            <h2 style="font-size: 18px; margin-bottom: 15px;">Choose Your Class</h2>
+            <div
+                style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; max-width: 500px; margin: 0 auto;">
+                <button class="class-btn start-class-btn" data-class="fighter" onclick="setClass('fighter')"
+                    style="background:#e74c3c;">
+                    <strong>FIGHTER</strong><br><small>Balanced • Counter-attacks</small>
+                </button>
+                <button class="class-btn start-class-btn" data-class="barbarian" onclick="setClass('barbarian')"
+                    style="background:#8B0000; opacity: 0.6;">
+                    <strong>BARBARIAN</strong><br><small>High HP • Rage at low HP</small>
+                </button>
+                <button class="class-btn start-class-btn" data-class="rogue" onclick="setClass('rogue')"
+                    style="background:#2c3e50; opacity: 0.6;">
+                    <strong>ROGUE</strong><br><small>Fast • 2x backstab damage</small>
+                </button>
+                <button class="class-btn start-class-btn" data-class="archer" onclick="setClass('archer')"
+                    style="background:#228B22; opacity: 0.6;">
+                    <strong>ARCHER</strong><br><small>Starts with Bow</small>
+                </button>
+                <button class="class-btn start-class-btn" data-class="wizard" onclick="setClass('wizard')"
+                    style="background:#9400D3; opacity: 0.6;">
+                    <strong>WIZARD</strong><br><small>High damage • Fragile</small>
+                </button>
+                <button class="class-btn start-class-btn" data-class="cleric" onclick="setClass('cleric')"
+                    style="background:#FFD700; color: #333; opacity: 0.6;">
+                    <strong>CLERIC</strong><br><small>Heals over time</small>
+                </button>
+                <button class="class-btn start-class-btn" data-class="cyborg" onclick="setClass('cyborg')"
+                    style="background:#708090; opacity: 0.6;">
+                    <strong>CYBORG</strong><br><small>Fast • Energy shield</small>
+                </button>
+            </div>
+        </div>
+
+        <div style="margin: 20px 0;">
+            <h2 style="font-size: 18px; margin-bottom: 10px;">Select Difficulty</h2>
+            <button onclick="setDifficulty(0)" id="start-diff-easy"
+                style="background:#27ae60; opacity: 0.6;">EASY</button>
+            <button onclick="setDifficulty(1)" id="start-diff-medium" style="background:#f39c12;">MEDIUM</button>
+            <button onclick="setDifficulty(2)" id="start-diff-hard"
+                style="background:#e74c3c; opacity: 0.6;">HARD</button>
+        </div>
+
+        <button onclick="startGame()"
+            style="font-size: 22px; padding: 15px 50px; background: linear-gradient(135deg, #e74c3c, #c0392b); margin-top: 20px;">
+            ⚔️ START GAME ⚔️
+        </button>
+
+        <div
+            style="margin-top: 25px; font-size: 12px; color: #aaa; max-width: 400px; margin-left: auto; margin-right: auto;">
+            <strong>Controls:</strong> WASD/Arrows to move • SPACE to jump • Z/J to attack
+        </div>
+    </div>
+
+    <div id="game-over">
+        <h1 id="winner-text">PLAYER WINS!</h1>
+
+        <div style="margin: 15px 0;">
+            <p style="margin-bottom: 8px; font-size: 14px;">Select Class:</p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 5px;">
+                <button class="class-btn" data-class="fighter" onclick="setClass('fighter')"
+                    style="background:#e74c3c; padding: 8px 12px; font-size: 12px;">FIGHTER</button>
+                <button class="class-btn" data-class="barbarian" onclick="setClass('barbarian')"
+                    style="background:#8B0000; padding: 8px 12px; font-size: 12px; opacity: 0.5;">BARBARIAN</button>
+                <button class="class-btn" data-class="rogue" onclick="setClass('rogue')"
+                    style="background:#2c3e50; padding: 8px 12px; font-size: 12px; opacity: 0.5;">ROGUE</button>
+                <button class="class-btn" data-class="archer" onclick="setClass('archer')"
+                    style="background:#228B22; padding: 8px 12px; font-size: 12px; opacity: 0.5;">ARCHER</button>
+                <button class="class-btn" data-class="wizard" onclick="setClass('wizard')"
+                    style="background:#9400D3; padding: 8px 12px; font-size: 12px; opacity: 0.5;">WIZARD</button>
+                <button class="class-btn" data-class="cleric" onclick="setClass('cleric')"
+                    style="background:#FFD700; color: #333; padding: 8px 12px; font-size: 12px; opacity: 0.5;">CLERIC</button>
+                <button class="class-btn" data-class="cyborg" onclick="setClass('cyborg')"
+                    style="background:#708090; padding: 8px 12px; font-size: 12px; opacity: 0.5;">CYBORG</button>
+            </div>
+        </div>
+
+        <div style="margin: 15px 0;">
+            <p style="margin-bottom: 8px; font-size: 14px;">Select Difficulty:</p>
+            <button onclick="setDifficulty(0)" id="diff-easy" style="background:#27ae60;">EASY</button>
+            <button onclick="setDifficulty(1)" id="diff-medium" style="background:#f39c12;">MEDIUM</button>
+            <button onclick="setDifficulty(2)" id="diff-hard" style="background:#e74c3c;">HARD</button>
+        </div>
+        <button onclick="fullReset()" style="font-size: 18px; padding: 12px 30px;">PLAY AGAIN</button>
+    </div>
+
+    <div id="shop">
+        <h1>SHOP</h1>
+        <div class="coin-display">Coins: <span id="shop-coins">0</span></div>
+
+        <div class="shop-item">
+            <div style="text-align:left;">
+                <strong>Health Potion</strong><br>
+                <small style="color:#ccc;">Restores 50 HP</small>
+            </div>
+            <button onclick="buyItem('heal')" id="btn-heal">50g</button>
+        </div>
+        <div class="shop-item">
+            <div style="text-align:left;">
+                <strong>Protein Shake</strong><br>
+                <small style="color:#ccc;">+10% Damage</small>
+            </div>
+            <button onclick="buyItem('damage')" id="btn-damage">100g</button>
+        </div>
+        <div class="shop-item">
+            <div style="text-align:left;">
+                <strong>New Sneakers</strong><br>
+                <small style="color:#ccc;">+5% Speed (Visible!)</small>
+            </div>
+            <button onclick="buyItem('speed')" id="btn-speed">100g</button>
+        </div>
+
+        <button style="width: 100%; background: #e67e22; margin-top: 20px;" onclick="nextRound()">START ROUND <span
+                id="next-round-num">2</span></button>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <script src="js/game.js"></script>
+</body>
+
+</html>

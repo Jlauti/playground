@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stick Fighter Arena</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <div id="title-screen">
+            <h1>⚔️ STICK FIGHTER ARENA ⚔️</h1>
+            <div class="controls-info">
+                <div class="player-controls">
+                    <h3>🔵 Player 1</h3>
+                    <p><kbd>SPACE</kbd> Jump</p>
+                    <p><kbd>A</kbd> <kbd>D</kbd> Move</p>
+                    <p><kbd>🖱️ Left Click</kbd> Attack</p>
+                    <p><kbd>E</kbd> Pick Up Weapon</p>
+                </div>
+                <div class="player-controls">
+                    <h3>🔴 Player 2</h3>
+                    <p><kbd>↑</kbd> Jump</p>
+                    <p><kbd>←</kbd> <kbd>→</kbd> Move</p>
+                    <p><kbd>🖱️ Right Click</kbd> Attack</p>
+                    <p><kbd>/</kbd> Pick Up Weapon</p>
+                </div>
+            </div>
+            <p class="aim-hint">🎯 Aim with mouse - attacks go towards cursor!</p>
+            <button id="start-btn">START BATTLE!</button>
+            <p class="hint">First to 5 wins!</p>
+        </div>
+        <canvas id="game-canvas"></canvas>
+        <div id="hud">
+            <div id="p1-hud" class="player-hud">
+                <span class="player-name">Player 1</span>
+                <div class="health-bar">
+                    <div class="health-fill" id="p1-health"></div>
+                </div>
+                <span class="score" id="p1-score">0</span>
+                <span class="weapon-indicator" id="p1-weapon">Fists</span>
+            </div>
+            <div id="round-info">
+                <span id="round-text">Round 1</span>
+            </div>
+            <div id="p2-hud" class="player-hud">
+                <span class="player-name">Player 2</span>
+                <div class="health-bar">
+                    <div class="health-fill" id="p2-health"></div>
+                </div>
+                <span class="score" id="p2-score">0</span>
+                <span class="weapon-indicator" id="p2-weapon">Fists</span>
+            </div>
+        </div>
+        <div id="victory-screen" class="hidden">
+            <h1 id="winner-text">Player 1 Wins!</h1>
+            <button id="rematch-btn">REMATCH!</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+
+</html>

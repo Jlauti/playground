@@ -1,0 +1,188 @@
+/* Stickman Arena - Main Styles */
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+canvas {
+    background-color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+#ui {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.health-container {
+    width: 300px;
+    background: #ccc;
+    height: 20px;
+    border: 2px solid #333;
+    position: relative;
+}
+
+.health-bar {
+    height: 100%;
+    background: #e74c3c;
+    width: 100%;
+    transition: width 0.2s;
+}
+
+.name {
+    position: absolute;
+    top: -25px;
+    font-weight: bold;
+    color: #333;
+    font-size: 18px;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+#controls-hint {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+    z-index: 10;
+    text-shadow: 0px 0px 5px white;
+    font-weight: bold;
+}
+
+#location-ui {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    display: none;
+    z-index: 100;
+}
+
+#start-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.98), rgba(22, 31, 40, 0.98));
+    color: white;
+    padding: 40px 50px;
+    text-align: center;
+    border-radius: 15px;
+    z-index: 200;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.start-class-btn {
+    padding: 12px 16px;
+    font-size: 11px;
+    min-width: 110px;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+}
+
+.start-class-btn:hover {
+    transform: scale(1.05);
+    border-color: white;
+}
+
+.start-class-btn small {
+    display: block;
+    margin-top: 3px;
+    font-weight: normal;
+    opacity: 0.9;
+}
+
+#shop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(44, 62, 80, 0.95);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    display: none;
+    z-index: 100;
+    width: 500px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.shop-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.shop-item button {
+    margin-top: 0;
+    background: #27ae60;
+}
+
+.shop-item button:disabled {
+    background: #7f8c8d;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.coin-display {
+    color: #f1c40f;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #2980b9;
+}

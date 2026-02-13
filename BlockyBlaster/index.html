@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blocky Blaster - Shooter Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <div id="start-screen">
+            <h1>🎮 Blocky Blaster 🎮</h1>
+            <p class="subtitle">Defend against the blocky invaders!</p>
+            <div class="high-score-display">
+                <span>🏆 HIGH SCORE: </span><span id="start-high-score">0</span>
+            </div>
+            <div class="character-preview">
+                <canvas id="preview-canvas" width="200" height="100"></canvas>
+            </div>
+            <div class="instructions">
+                <p>⬅️ ➡️ Arrow Keys to Move</p>
+                <p>🔫 SPACE to Shoot</p>
+                <p>👾 BOSS every 5 waves!</p>
+            </div>
+            <div class="settings-panel">
+                <label for="speed-slider">🏃 Movement Speed</label>
+                <div class="slider-container">
+                    <span class="slider-label">Slow</span>
+                    <input type="range" id="speed-slider" min="0.5" max="2" step="0.1" value="1">
+                    <span class="slider-label">Fast</span>
+                </div>
+                <span id="speed-value">1.0x</span>
+            </div>
+            <button id="start-btn">START GAME</button>
+        </div>
+
+        <div id="game-screen" class="hidden">
+            <div id="hud">
+                <div class="hud-item">
+                    <span class="label">SCORE</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="label">HIGH</span>
+                    <span id="high-score">0</span>
+                </div>
+                <div class="hud-item">
+                    <span class="label">WAVE</span>
+                    <span id="wave">1</span>
+                </div>
+                <div class="hud-item">
+                    <span class="label">LIVES</span>
+                    <span id="lives">❤️❤️❤️</span>
+                </div>
+            </div>
+            <canvas id="game-canvas"></canvas>
+        </div>
+
+        <div id="game-over-screen" class="hidden">
+            <h1>💥 GAME OVER 💥</h1>
+            <p>Final Score: <span id="final-score">0</span></p>
+            <p>Waves Survived: <span id="final-wave">1</span></p>
+            <p class="new-high-score hidden" id="new-high-score">🏆 NEW HIGH SCORE! 🏆</p>
+            <p>Best Score: <span id="best-score">0</span></p>
+            <button id="restart-btn">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,397 @@
+/* ============================================
+   BLOCKY BLASTER - Game Styles
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#game-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 100vh;
+    max-height: 600px;
+}
+
+/* ============================================
+   Start Screen
+   ============================================ */
+
+#start-screen {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg,
+            rgba(15, 52, 96, 0.95) 0%,
+            rgba(26, 26, 46, 0.98) 100%);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow:
+        0 0 60px rgba(255, 107, 107, 0.3),
+        0 0 120px rgba(78, 205, 196, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 107, 107, 0.3);
+}
+
+#start-screen h1 {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease infinite;
+    text-shadow: none;
+    margin-bottom: 10px;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.subtitle {
+    color: #a0a0a0;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.character-preview {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#preview-canvas {
+    display: block;
+}
+
+.instructions {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px 40px;
+    border-radius: 15px;
+    margin: 20px 0;
+    border: 1px solid rgba(78, 205, 196, 0.3);
+}
+
+.instructions p {
+    color: #e0e0e0;
+    font-size: 1rem;
+    margin: 8px 0;
+    letter-spacing: 1px;
+}
+
+.settings-panel {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 15px 25px;
+    border-radius: 15px;
+    margin: 10px 0;
+    border: 1px solid rgba(78, 205, 196, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.settings-panel label {
+    color: #4ecdc4;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.slider-label {
+    color: #a0a0a0;
+    font-size: 0.8rem;
+}
+
+#speed-slider {
+    width: 120px;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(90deg, #4ecdc4, #ff6b6b);
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+#speed-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+#speed-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+#speed-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#speed-value {
+    color: #feca57;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#start-btn,
+#restart-btn {
+    padding: 15px 50px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow:
+        0 5px 20px rgba(255, 107, 107, 0.4),
+        0 0 40px rgba(255, 107, 107, 0.2);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+#start-btn:hover,
+#restart-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow:
+        0 8px 30px rgba(255, 107, 107, 0.6),
+        0 0 60px rgba(255, 107, 107, 0.3);
+}
+
+#start-btn:active,
+#restart-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* ============================================
+   Game Screen
+   ============================================ */
+
+#game-screen {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    background: #0a0a1a;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+}
+
+#hud {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+    border-bottom: 2px solid rgba(78, 205, 196, 0.3);
+}
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hud-item .label {
+    font-size: 0.7rem;
+    color: #78909c;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.hud-item span:not(.label) {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4ecdc4;
+    text-shadow: 0 0 10px rgba(78, 205, 196, 0.5);
+}
+
+#lives {
+    font-size: 1.3rem !important;
+    letter-spacing: 5px;
+}
+
+#game-canvas {
+    flex: 1;
+    display: block;
+}
+
+/* ============================================
+   Game Over Screen
+   ============================================ */
+
+#game-over-screen {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg,
+            rgba(26, 26, 46, 0.98) 0%,
+            rgba(15, 15, 30, 0.99) 100%);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+#game-over-screen h1 {
+    font-size: 2.5rem;
+    color: #ff6b6b;
+    text-shadow: 0 0 30px rgba(255, 107, 107, 0.5);
+    margin-bottom: 30px;
+    animation: pulse 1.5s ease infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+#game-over-screen p {
+    font-size: 1.3rem;
+    color: #e0e0e0;
+    margin: 10px 0;
+}
+
+#game-over-screen span {
+    color: #feca57;
+    font-weight: bold;
+}
+
+/* ============================================
+   High Score Styles
+   ============================================ */
+
+.high-score-display {
+    background: linear-gradient(135deg, rgba(254, 202, 87, 0.2), rgba(255, 107, 107, 0.2));
+    padding: 10px 25px;
+    border-radius: 25px;
+    margin-bottom: 15px;
+    border: 2px solid rgba(254, 202, 87, 0.4);
+    font-size: 1.1rem;
+    color: #feca57;
+    text-shadow: 0 0 10px rgba(254, 202, 87, 0.5);
+}
+
+.high-score-display span:last-child {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+#high-score {
+    color: #feca57 !important;
+}
+
+.new-high-score {
+    font-size: 1.5rem !important;
+    color: #feca57 !important;
+    animation: newHighScore 0.5s ease infinite alternate;
+    text-shadow: 0 0 20px rgba(254, 202, 87, 0.8);
+    margin: 15px 0 !important;
+}
+
+@keyframes newHighScore {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+#best-score {
+    color: #feca57;
+    font-size: 1.5rem;
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+.hidden {
+    display: none !important;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 600px) {
+    #start-screen h1 {
+        font-size: 2rem;
+    }
+
+    .instructions {
+        padding: 15px 25px;
+    }
+
+    #start-btn,
+    #restart-btn {
+        padding: 12px 35px;
+        font-size: 1.1rem;
+    }
+
+    #hud {
+        padding: 10px 15px;
+    }
+
+    .hud-item span:not(.label) {
+        font-size: 1.2rem;
+    }
+}
