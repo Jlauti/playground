@@ -1,0 +1,376 @@
+{
+    "version": "1.0.0",
+    "enemies": [
+        {
+            "id": "shadow_imp",
+            "name": "Shadow Imp",
+            "description": "A small, darting creature of darkness.",
+            "baseStats": {
+                "hp": 30,
+                "maxHp": 30,
+                "atk": 5,
+                "arm": 2,
+                "attackSpeed": 1.2,
+                "critChance": 0.05,
+                "critMultiplier": 1.5,
+                "pwr": 0,
+                "res": 2,
+                "cdr": 0,
+                "lifesteal": 0,
+                "evasion": 0.05
+            },
+            "xpReward": 15,
+            "goldReward": 8,
+            "tags": [
+                "demon",
+                "fast"
+            ]
+        },
+        {
+            "id": "gate_sentry",
+            "name": "Gate Sentry",
+            "description": "An animated armor standing eternal guard.",
+            "baseStats": {
+                "hp": 60,
+                "maxHp": 60,
+                "atk": 8,
+                "arm": 12,
+                "attackSpeed": 0.7,
+                "critChance": 0.02,
+                "critMultiplier": 1.5,
+                "pwr": 0,
+                "res": 5,
+                "cdr": 0,
+                "lifesteal": 0,
+                "evasion": 0
+            },
+            "xpReward": 25,
+            "goldReward": 15,
+            "tags": [
+                "construct",
+                "armored"
+            ]
+        },
+        {
+            "id": "void_stalker",
+            "name": "Void Stalker",
+            "description": "A predator from between dimensions.",
+            "baseStats": {
+                "hp": 45,
+                "maxHp": 45,
+                "atk": 12,
+                "arm": 4,
+                "attackSpeed": 1.0,
+                "critChance": 0.15,
+                "critMultiplier": 1.8,
+                "pwr": 0,
+                "res": 3,
+                "cdr": 0,
+                "lifesteal": 0,
+                "evasion": 0.10
+            },
+            "xpReward": 30,
+            "goldReward": 18,
+            "tags": [
+                "void",
+                "assassin"
+            ]
+        },
+        {
+            "id": "corrupted_knight",
+            "name": "Corrupted Knight",
+            "description": "A fallen warrior consumed by darkness.",
+            "baseStats": {
+                "hp": 80,
+                "maxHp": 80,
+                "atk": 10,
+                "arm": 8,
+                "attackSpeed": 0.8,
+                "critChance": 0.08,
+                "critMultiplier": 1.6,
+                "pwr": 0,
+                "res": 6,
+                "cdr": 0,
+                "lifesteal": 0.05,
+                "evasion": 0
+            },
+            "xpReward": 40,
+            "goldReward": 22,
+            "tags": [
+                "undead",
+                "warrior"
+            ]
+        },
+        {
+            "id": "plague_carrier",
+            "name": "Plague Carrier",
+            "description": "A rotting abomination spreading disease.",
+            "baseStats": {
+                "hp": 50,
+                "maxHp": 50,
+                "atk": 6,
+                "arm": 3,
+                "attackSpeed": 0.9,
+                "critChance": 0.02,
+                "critMultiplier": 1.5,
+                "pwr": 8,
+                "res": 8,
+                "cdr": 0,
+                "lifesteal": 0,
+                "evasion": 0
+            },
+            "xpReward": 28,
+            "goldReward": 16,
+            "abilities": [
+                "poison_aura"
+            ],
+            "tags": [
+                "undead",
+                "toxic"
+            ]
+        },
+        {
+            "id": "blood_cultist",
+            "name": "Blood Cultist",
+            "description": "A fanatic devoted to dark rituals.",
+            "baseStats": {
+                "hp": 35,
+                "maxHp": 35,
+                "atk": 9,
+                "arm": 2,
+                "attackSpeed": 1.0,
+                "critChance": 0.10,
+                "critMultiplier": 1.5,
+                "pwr": 5,
+                "res": 4,
+                "cdr": 0,
+                "lifesteal": 0.10,
+                "evasion": 0
+            },
+            "xpReward": 22,
+            "goldReward": 14,
+            "abilities": [
+                "blood_sacrifice"
+            ],
+            "tags": [
+                "human",
+                "cultist"
+            ]
+        },
+        {
+            "id": "nightmare_fiend",
+            "name": "Nightmare Fiend",
+            "description": "A manifestation of primal fears.",
+            "baseStats": {
+                "hp": 70,
+                "maxHp": 70,
+                "atk": 14,
+                "arm": 5,
+                "attackSpeed": 0.85,
+                "critChance": 0.12,
+                "critMultiplier": 1.7,
+                "pwr": 10,
+                "res": 8,
+                "cdr": 0,
+                "lifesteal": 0,
+                "evasion": 0.05
+            },
+            "xpReward": 45,
+            "goldReward": 28,
+            "abilities": [
+                "fear_aura"
+            ],
+            "tags": [
+                "demon",
+                "nightmare"
+            ]
+        },
+        {
+            "id": "iron_golem",
+            "name": "Iron Golem",
+            "description": "A massive construct of enchanted metal.",
+            "baseStats": {
+                "hp": 120,
+                "maxHp": 120,
+                "atk": 15,
+                "arm": 25,
+                "attackSpeed": 0.5,
+                "critChance": 0.0,
+                "critMultiplier": 1.5,
+                "pwr": 0,
+                "res": 15,
+                "cdr": 0,
+                "lifesteal": 0,
+                "evasion": 0
+            },
+            "xpReward": 55,
+            "goldReward": 35,
+            "tags": [
+                "construct",
+                "heavy"
+            ]
+        },
+        {
+            "id": "wraith",
+            "name": "Wraith",
+            "description": "An ethereal specter drifting through walls.",
+            "baseStats": {
+                "hp": 40,
+                "maxHp": 40,
+                "atk": 11,
+                "arm": 0,
+                "attackSpeed": 1.1,
+                "critChance": 0.08,
+                "critMultiplier": 1.6,
+                "pwr": 12,
+                "res": 20,
+                "cdr": 0,
+                "lifesteal": 0,
+                "evasion": 0.20
+            },
+            "xpReward": 38,
+            "goldReward": 20,
+            "abilities": [
+                "phase_shift"
+            ],
+            "tags": [
+                "undead",
+                "ethereal"
+            ]
+        },
+        {
+            "id": "dark_archer",
+            "name": "Dark Archer",
+            "description": "A ranged attacker from the shadows.",
+            "baseStats": {
+                "hp": 35,
+                "maxHp": 35,
+                "atk": 13,
+                "arm": 3,
+                "attackSpeed": 1.3,
+                "critChance": 0.18,
+                "critMultiplier": 1.8,
+                "pwr": 0,
+                "res": 3,
+                "cdr": 0,
+                "lifesteal": 0,
+                "evasion": 0.08
+            },
+            "xpReward": 32,
+            "goldReward": 18,
+            "tags": [
+                "human",
+                "ranged"
+            ]
+        }
+    ],
+    "bosses": [
+        {
+            "id": "kurogane_warden",
+            "name": "Kurogane Warden",
+            "description": "The eternal guardian of the Shattered Gate.",
+            "isBoss": true,
+            "baseStats": {
+                "hp": 500,
+                "maxHp": 500,
+                "atk": 18,
+                "arm": 30,
+                "attackSpeed": 0.6,
+                "critChance": 0.10,
+                "critMultiplier": 1.5,
+                "pwr": 10,
+                "res": 20,
+                "cdr": 0,
+                "lifesteal": 0,
+                "evasion": 0
+            },
+            "xpReward": 200,
+            "goldReward": 150,
+            "abilities": [
+                "iron_stance",
+                "shield_bash",
+                "vulnerable_strike"
+            ],
+            "tags": [
+                "construct",
+                "boss",
+                "guardian"
+            ],
+            "phases": [
+                {
+                    "phase": 1,
+                    "hpThreshold": 1.0,
+                    "effects": [
+                        {
+                            "type": "periodic_shield",
+                            "value": 50
+                        }
+                    ],
+                    "dialogue": "You dare challenge the Warden?"
+                },
+                {
+                    "phase": 2,
+                    "hpThreshold": 0.5,
+                    "modifiers": {
+                        "attackSpeedPercent": 0.30
+                    },
+                    "effects": [
+                        {
+                            "type": "apply_vulnerable",
+                            "value": 2
+                        }
+                    ],
+                    "dialogue": "Now you face my true power!"
+                }
+            ]
+        }
+    ],
+    "affixes": [
+        {
+            "id": "armored",
+            "name": "Armored",
+            "description": "+50% Armor",
+            "modifiers": {
+                "armPercent": 0.50
+            }
+        },
+        {
+            "id": "toxic",
+            "name": "Toxic",
+            "description": "Attacks apply 2 Poison stacks",
+            "effects": [
+                {
+                    "type": "poison_on_hit",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "frenzied",
+            "name": "Frenzied",
+            "description": "+40% Attack Speed",
+            "modifiers": {
+                "attackSpeedPercent": 0.40
+            }
+        },
+        {
+            "id": "vampiric",
+            "name": "Vampiric",
+            "description": "+15% Lifesteal",
+            "modifiers": {
+                "lifesteal": 0.15
+            }
+        },
+        {
+            "id": "volatile",
+            "name": "Volatile",
+            "description": "Explodes on death dealing 20 damage",
+            "effects": [
+                {
+                    "type": "death_explosion",
+                    "value": 20
+                }
+            ]
+        }
+    ]
+}

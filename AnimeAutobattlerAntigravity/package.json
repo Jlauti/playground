@@ -1,0 +1,24 @@
+{
+  "name": "anime-autobattler",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter @anime-autobattler/web dev",
+    "build": "pnpm --filter @anime-autobattler/web build",
+    "preview": "pnpm --filter @anime-autobattler/web preview",
+    "test": "pnpm -r test",
+    "test:sim": "pnpm --filter @anime-autobattler/sim test",
+    "test:content": "pnpm --filter @anime-autobattler/content test",
+    "sim:benchmark": "pnpm --filter @anime-autobattler/tools benchmark",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}

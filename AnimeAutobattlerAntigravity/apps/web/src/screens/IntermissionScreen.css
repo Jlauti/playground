@@ -1,0 +1,290 @@
+.intermission-screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-xl);
+    gap: var(--spacing-lg);
+}
+
+/* Header */
+.intermission-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+}
+
+.wave-complete {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.complete-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--success);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.25rem;
+}
+
+.player-stats {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.player-stats .stat {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    font-weight: 500;
+}
+
+/* Tabs */
+.intermission-tabs {
+    display: flex;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+}
+
+.tab {
+    flex: 1;
+    padding: var(--spacing-md);
+    background: transparent;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: all var(--transition-fast);
+}
+
+.tab:hover {
+    background: var(--bg-hover);
+}
+
+.tab.active {
+    background: var(--accent-primary);
+    color: white;
+}
+
+/* Content */
+.intermission-content {
+    flex: 1;
+    padding: var(--spacing-xl);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    overflow-y: auto;
+}
+
+.intermission-content h3 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-secondary);
+}
+
+/* Skills Panel */
+.skill-branches {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.skill-branch {
+    padding: var(--spacing-xl);
+    background: var(--bg-card);
+    border: 2px solid var(--bg-hover);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+}
+
+.skill-branch:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.skill-branch h4 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.skill-branch p {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+.skill-points-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(59, 130, 246, 0.2));
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.skill-points-icon {
+    font-size: 1.5rem;
+}
+
+.skill-points-count {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+}
+
+.skill-branch.can-allocate {
+    cursor: pointer;
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.skill-branch.can-allocate:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+    }
+}
+
+.skill-allocated {
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+}
+
+.blade-dance {
+    border-color: #ec4899;
+}
+
+.blade-dance:hover {
+    box-shadow: 0 8px 24px rgba(236, 72, 153, 0.2);
+}
+
+.bloodcraft {
+    border-color: #dc2626;
+}
+
+.bloodcraft:hover {
+    box-shadow: 0 8px 24px rgba(220, 38, 38, 0.2);
+}
+
+.iron-veil {
+    border-color: #3b82f6;
+}
+
+.iron-veil:hover {
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2);
+}
+
+/* Perks Panel */
+.perk-cards,
+.item-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.perk-card,
+.item-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg);
+    background: var(--bg-card);
+    border: 2px solid var(--bg-hover);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.perk-card:hover,
+.item-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-primary);
+}
+
+.perk-card.selected,
+.item-card.selected {
+    border-color: #22c55e;
+    border-width: 3px;
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.05));
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.5), inset 0 0 20px rgba(34, 197, 94, 0.1);
+    transform: translateY(-6px) scale(1.02);
+}
+
+.perk-card.selected::before,
+.item-card.selected::before {
+    content: '✓ SELECTED';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #22c55e;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.perk-card,
+.item-card {
+    position: relative;
+}
+
+.perk-name,
+.item-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.perk-desc,
+.item-desc {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.perk-rarity {
+    margin-top: auto;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.item-slot {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+/* Continue Button */
+.continue-btn {
+    align-self: center;
+}

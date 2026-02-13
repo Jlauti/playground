@@ -1,0 +1,388 @@
+{
+    "version": "1.0.0",
+    "items": [
+        {
+            "id": "wpn_rusty_blade",
+            "name": "Rusty Blade",
+            "description": "A worn but serviceable weapon.",
+            "slot": "weapon",
+            "rarity": "common",
+            "modifiers": {
+                "atk": 5
+            }
+        },
+        {
+            "id": "wpn_iron_sword",
+            "name": "Iron Sword",
+            "description": "Reliable iron blade.",
+            "slot": "weapon",
+            "rarity": "common",
+            "modifiers": {
+                "atk": 8
+            }
+        },
+        {
+            "id": "wpn_swift_dagger",
+            "name": "Swift Dagger",
+            "description": "Light and quick.",
+            "slot": "weapon",
+            "rarity": "common",
+            "modifiers": {
+                "atk": 4,
+                "attackSpeedPercent": 0.10
+            }
+        },
+        {
+            "id": "wpn_crimson_edge",
+            "name": "Crimson Edge",
+            "description": "Drips with malevolent energy.",
+            "slot": "weapon",
+            "rarity": "rare",
+            "modifiers": {
+                "atk": 12
+            },
+            "effects": [
+                {
+                    "type": "bleed_on_hit",
+                    "value": 1
+                }
+            ],
+            "lore": "Forged in blood, it hungers for more."
+        },
+        {
+            "id": "wpn_vorpal_blade",
+            "name": "Vorpal Blade",
+            "description": "Seeks weak points instinctively.",
+            "slot": "weapon",
+            "rarity": "rare",
+            "modifiers": {
+                "atk": 10,
+                "critChance": 0.08
+            }
+        },
+        {
+            "id": "wpn_berserker_cleaver",
+            "name": "Berserker Cleaver",
+            "description": "Heavy and brutal.",
+            "slot": "weapon",
+            "rarity": "rare",
+            "modifiers": {
+                "atk": 18,
+                "attackSpeedPercent": -0.10
+            }
+        },
+        {
+            "id": "wpn_shadow_fang",
+            "name": "Shadow Fang",
+            "description": "Strikes from unexpected angles.",
+            "slot": "weapon",
+            "rarity": "epic",
+            "modifiers": {
+                "atk": 15,
+                "critChance": 0.12,
+                "critMultiplier": 0.25
+            },
+            "lore": "The shadows themselves seem to guide its path."
+        },
+        {
+            "id": "wpn_bloodreaver",
+            "name": "Bloodreaver",
+            "description": "Drinks deeply from wounds.",
+            "slot": "weapon",
+            "rarity": "epic",
+            "modifiers": {
+                "atk": 14,
+                "lifesteal": 0.10
+            },
+            "effects": [
+                {
+                    "type": "bleed_on_hit",
+                    "value": 2
+                }
+            ]
+        },
+        {
+            "id": "wpn_godslayer",
+            "name": "Godslayer",
+            "description": "A weapon of impossible power.",
+            "slot": "weapon",
+            "rarity": "legendary",
+            "modifiers": {
+                "atk": 25,
+                "critChance": 0.15,
+                "critMultiplier": 0.50
+            },
+            "lore": "They say it once felled a deity. Perhaps it will again."
+        },
+        {
+            "id": "wpn_soul_render",
+            "name": "Soul Render",
+            "description": "Tears at the very essence of foes.",
+            "slot": "weapon",
+            "rarity": "legendary",
+            "modifiers": {
+                "atk": 20,
+                "lifesteal": 0.15
+            },
+            "effects": [
+                {
+                    "type": "true_damage",
+                    "value": 10,
+                    "trigger": "on_hit"
+                }
+            ]
+        },
+        {
+            "id": "arm_leather_vest",
+            "name": "Leather Vest",
+            "description": "Basic protection.",
+            "slot": "armor",
+            "rarity": "common",
+            "modifiers": {
+                "arm": 5
+            }
+        },
+        {
+            "id": "arm_chainmail",
+            "name": "Chainmail",
+            "description": "Interlocking rings of metal.",
+            "slot": "armor",
+            "rarity": "common",
+            "modifiers": {
+                "arm": 8
+            }
+        },
+        {
+            "id": "arm_padded_coat",
+            "name": "Padded Coat",
+            "description": "Comfortable and protective.",
+            "slot": "armor",
+            "rarity": "common",
+            "modifiers": {
+                "maxHp": 30
+            }
+        },
+        {
+            "id": "arm_knight_plate",
+            "name": "Knight's Plate",
+            "description": "Heavy but dependable.",
+            "slot": "armor",
+            "rarity": "rare",
+            "modifiers": {
+                "arm": 15,
+                "maxHp": 20
+            }
+        },
+        {
+            "id": "arm_shadow_cloak",
+            "name": "Shadow Cloak",
+            "description": "Hard to pin down.",
+            "slot": "armor",
+            "rarity": "rare",
+            "modifiers": {
+                "arm": 5,
+                "evasion": 0.08
+            }
+        },
+        {
+            "id": "arm_bloodbound_mail",
+            "name": "Bloodbound Mail",
+            "description": "Feeds on combat.",
+            "slot": "armor",
+            "rarity": "epic",
+            "modifiers": {
+                "arm": 12,
+                "lifesteal": 0.05
+            },
+            "effects": [
+                {
+                    "type": "heal_on_kill",
+                    "value": 15
+                }
+            ]
+        },
+        {
+            "id": "arm_dragon_scales",
+            "name": "Dragon Scales",
+            "description": "Nearly impenetrable.",
+            "slot": "armor",
+            "rarity": "epic",
+            "modifiers": {
+                "arm": 25,
+                "res": 15
+            }
+        },
+        {
+            "id": "arm_immortal_aegis",
+            "name": "Immortal Aegis",
+            "description": "Legends speak of its wearer never falling.",
+            "slot": "armor",
+            "rarity": "legendary",
+            "modifiers": {
+                "arm": 30,
+                "maxHp": 100
+            },
+            "effects": [
+                {
+                    "type": "death_prevention",
+                    "value": 1,
+                    "trigger": "once_per_wave"
+                }
+            ],
+            "lore": "Death itself recoils from its bearer."
+        },
+        {
+            "id": "arm_phoenix_mantle",
+            "name": "Phoenix Mantle",
+            "description": "Rising from the ashes.",
+            "slot": "armor",
+            "rarity": "legendary",
+            "modifiers": {
+                "arm": 20,
+                "maxHp": 50
+            },
+            "effects": [
+                {
+                    "type": "revive",
+                    "value": 0.30,
+                    "trigger": "once_per_wave"
+                }
+            ]
+        },
+        {
+            "id": "trn_lucky_coin",
+            "name": "Lucky Coin",
+            "description": "Fortune favors the bold.",
+            "slot": "trinket",
+            "rarity": "common",
+            "modifiers": {
+                "critChance": 0.05
+            }
+        },
+        {
+            "id": "trn_warrior_band",
+            "name": "Warrior's Band",
+            "description": "Simple but effective.",
+            "slot": "trinket",
+            "rarity": "common",
+            "modifiers": {
+                "atk": 3,
+                "arm": 3
+            }
+        },
+        {
+            "id": "trn_vital_stone",
+            "name": "Vital Stone",
+            "description": "Pulses with life energy.",
+            "slot": "trinket",
+            "rarity": "common",
+            "modifiers": {
+                "maxHp": 25
+            }
+        },
+        {
+            "id": "trn_bloodstone",
+            "name": "Bloodstone",
+            "description": "Crimson gem of power.",
+            "slot": "trinket",
+            "rarity": "rare",
+            "modifiers": {
+                "lifesteal": 0.06
+            },
+            "effects": [
+                {
+                    "type": "bleed_damage_bonus",
+                    "value": 0.15
+                }
+            ]
+        },
+        {
+            "id": "trn_haste_charm",
+            "name": "Haste Charm",
+            "description": "Time seems to slow around you.",
+            "slot": "trinket",
+            "rarity": "rare",
+            "modifiers": {
+                "attackSpeedPercent": 0.15,
+                "cdr": 0.10
+            }
+        },
+        {
+            "id": "trn_crit_lens",
+            "name": "Critical Lens",
+            "description": "Reveals weak points.",
+            "slot": "trinket",
+            "rarity": "rare",
+            "modifiers": {
+                "critChance": 0.10,
+                "critMultiplier": 0.20
+            }
+        },
+        {
+            "id": "trn_void_heart",
+            "name": "Void Heart",
+            "description": "A fragment of nothingness.",
+            "slot": "trinket",
+            "rarity": "epic",
+            "modifiers": {
+                "pwr": 15
+            },
+            "effects": [
+                {
+                    "type": "true_damage_percent",
+                    "value": 0.05,
+                    "trigger": "on_hit"
+                }
+            ]
+        },
+        {
+            "id": "trn_berserker_totem",
+            "name": "Berserker Totem",
+            "description": "Channel primal fury.",
+            "slot": "trinket",
+            "rarity": "epic",
+            "modifiers": {
+                "atk": 10,
+                "attackSpeedPercent": 0.10
+            },
+            "effects": [
+                {
+                    "type": "damage_taken_increase",
+                    "value": 0.10
+                }
+            ]
+        },
+        {
+            "id": "trn_soul_anchor",
+            "name": "Soul Anchor",
+            "description": "Binds your soul to this realm.",
+            "slot": "trinket",
+            "rarity": "legendary",
+            "modifiers": {
+                "maxHp": 75,
+                "arm": 10,
+                "res": 10
+            },
+            "effects": [
+                {
+                    "type": "cc_immunity",
+                    "value": 1
+                }
+            ],
+            "lore": "Neither death nor chaos can claim you."
+        },
+        {
+            "id": "trn_infinity_loop",
+            "name": "Infinity Loop",
+            "description": "Endless potential.",
+            "slot": "trinket",
+            "rarity": "legendary",
+            "modifiers": {
+                "attackSpeedPercent": 0.25,
+                "critChance": 0.15,
+                "cdr": 0.20
+            },
+            "lore": "A circle with no beginning and no end."
+        }
+    ]
+}

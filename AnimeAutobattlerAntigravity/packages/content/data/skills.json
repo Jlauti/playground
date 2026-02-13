@@ -1,0 +1,378 @@
+{
+    "version": "1.0.0",
+    "skills": [
+        {
+            "id": "bd_swift_strikes",
+            "name": "Swift Strikes",
+            "description": "+5% Attack Speed per point",
+            "branch": "blade_dance",
+            "tier": 1,
+            "maxPoints": 5,
+            "prerequisites": [],
+            "modifiers": {
+                "attackSpeedPercent": 0.05
+            },
+            "effects": [],
+            "isKeystone": false
+        },
+        {
+            "id": "bd_keen_edge",
+            "name": "Keen Edge",
+            "description": "+2% Crit Chance per point",
+            "branch": "blade_dance",
+            "tier": 1,
+            "maxPoints": 5,
+            "prerequisites": [],
+            "modifiers": {
+                "critChance": 0.02
+            },
+            "effects": [],
+            "isKeystone": false
+        },
+        {
+            "id": "bd_precision",
+            "name": "Precision",
+            "description": "+10% Crit Damage per point",
+            "branch": "blade_dance",
+            "tier": 2,
+            "maxPoints": 5,
+            "prerequisites": [
+                "bd_keen_edge"
+            ],
+            "modifiers": {
+                "critMultiplier": 0.10
+            },
+            "effects": [],
+            "isKeystone": false
+        },
+        {
+            "id": "bd_flurry",
+            "name": "Flurry",
+            "description": "+3% Attack Speed, +1% Crit Chance per point",
+            "branch": "blade_dance",
+            "tier": 2,
+            "maxPoints": 5,
+            "prerequisites": [
+                "bd_swift_strikes"
+            ],
+            "modifiers": {
+                "attackSpeedPercent": 0.03,
+                "critChance": 0.01
+            },
+            "effects": [],
+            "isKeystone": false
+        },
+        {
+            "id": "bd_deadly_tempo",
+            "name": "Deadly Tempo",
+            "description": "Crits grant +10% AS for 2s (stacking)",
+            "branch": "blade_dance",
+            "tier": 3,
+            "maxPoints": 3,
+            "prerequisites": [
+                "bd_flurry",
+                "bd_precision"
+            ],
+            "effects": [
+                {
+                    "type": "crit_attack_speed_buff",
+                    "value": 0.10,
+                    "perPoint": true
+                }
+            ],
+            "isKeystone": false
+        },
+        {
+            "id": "bd_blade_mastery",
+            "name": "Blade Mastery",
+            "description": "+3 ATK per point",
+            "branch": "blade_dance",
+            "tier": 3,
+            "maxPoints": 5,
+            "prerequisites": [
+                "bd_precision"
+            ],
+            "modifiers": {
+                "atk": 3
+            },
+            "effects": [],
+            "isKeystone": false
+        },
+        {
+            "id": "bd_frenzy_loop",
+            "name": "Frenzy Loop",
+            "description": "KEYSTONE: Each crit reduces all cooldowns by 0.2s (0.5s internal CD)",
+            "branch": "blade_dance",
+            "tier": 5,
+            "maxPoints": 1,
+            "prerequisites": [
+                "bd_deadly_tempo",
+                "bd_blade_mastery"
+            ],
+            "effects": [
+                {
+                    "type": "cdr_on_crit",
+                    "value": 0.2,
+                    "perPoint": false
+                }
+            ],
+            "isKeystone": true,
+            "keystoneId": "frenzy_loop"
+        },
+        {
+            "id": "bc_bloodletter",
+            "name": "Bloodletter",
+            "description": "Attacks apply 1 Bleed stack per point",
+            "branch": "bloodcraft",
+            "tier": 1,
+            "maxPoints": 3,
+            "prerequisites": [],
+            "effects": [
+                {
+                    "type": "bleed_on_hit",
+                    "value": 1,
+                    "perPoint": true
+                }
+            ],
+            "isKeystone": false
+        },
+        {
+            "id": "bc_crimson_edge",
+            "name": "Crimson Edge",
+            "description": "+2 ATK per point",
+            "branch": "bloodcraft",
+            "tier": 1,
+            "maxPoints": 5,
+            "prerequisites": [],
+            "modifiers": {
+                "atk": 2
+            },
+            "effects": [],
+            "isKeystone": false
+        },
+        {
+            "id": "bc_deep_wounds",
+            "name": "Deep Wounds",
+            "description": "+15% Bleed damage per point",
+            "branch": "bloodcraft",
+            "tier": 2,
+            "maxPoints": 5,
+            "prerequisites": [
+                "bc_bloodletter"
+            ],
+            "effects": [
+                {
+                    "type": "bleed_damage_bonus",
+                    "value": 0.15,
+                    "perPoint": true
+                }
+            ],
+            "isKeystone": false
+        },
+        {
+            "id": "bc_sanguine_fury",
+            "name": "Sanguine Fury",
+            "description": "+1% ATK per Bleed stack on enemies",
+            "branch": "bloodcraft",
+            "tier": 2,
+            "maxPoints": 5,
+            "prerequisites": [
+                "bc_crimson_edge"
+            ],
+            "effects": [
+                {
+                    "type": "atk_per_bleed",
+                    "value": 0.01,
+                    "perPoint": true
+                }
+            ],
+            "isKeystone": false
+        },
+        {
+            "id": "bc_blood_frenzy",
+            "name": "Blood Frenzy",
+            "description": "+5% AS when enemy is bleeding",
+            "branch": "bloodcraft",
+            "tier": 3,
+            "maxPoints": 3,
+            "prerequisites": [
+                "bc_deep_wounds"
+            ],
+            "modifiers": {
+                "attackSpeedPercent": 0.05
+            },
+            "effects": [
+                {
+                    "type": "conditional_as_bleed",
+                    "value": 0.05,
+                    "perPoint": true
+                }
+            ],
+            "isKeystone": false
+        },
+        {
+            "id": "bc_rupture",
+            "name": "Rupture",
+            "description": "Bleed ticks have 10% chance to apply Vulnerable",
+            "branch": "bloodcraft",
+            "tier": 3,
+            "maxPoints": 3,
+            "prerequisites": [
+                "bc_sanguine_fury"
+            ],
+            "effects": [
+                {
+                    "type": "bleed_vulnerable",
+                    "value": 0.10,
+                    "perPoint": true
+                }
+            ],
+            "isKeystone": false
+        },
+        {
+            "id": "bc_hemorrhage_engine",
+            "name": "Hemorrhage Engine",
+            "description": "KEYSTONE: Every 5 bleed ticks triggers a free basic attack",
+            "branch": "bloodcraft",
+            "tier": 5,
+            "maxPoints": 1,
+            "prerequisites": [
+                "bc_blood_frenzy",
+                "bc_rupture"
+            ],
+            "effects": [
+                {
+                    "type": "bleed_free_attack",
+                    "value": 5,
+                    "perPoint": false
+                }
+            ],
+            "isKeystone": true,
+            "keystoneId": "hemorrhage_engine"
+        },
+        {
+            "id": "iv_iron_skin",
+            "name": "Iron Skin",
+            "description": "+3 Armor per point",
+            "branch": "iron_veil",
+            "tier": 1,
+            "maxPoints": 5,
+            "prerequisites": [],
+            "modifiers": {
+                "arm": 3
+            },
+            "effects": [],
+            "isKeystone": false
+        },
+        {
+            "id": "iv_vitality",
+            "name": "Vitality",
+            "description": "+20 Max HP per point",
+            "branch": "iron_veil",
+            "tier": 1,
+            "maxPoints": 5,
+            "prerequisites": [],
+            "modifiers": {
+                "maxHp": 20
+            },
+            "effects": [],
+            "isKeystone": false
+        },
+        {
+            "id": "iv_aegis",
+            "name": "Aegis",
+            "description": "Start each wave with a 15 HP shield per point",
+            "branch": "iron_veil",
+            "tier": 2,
+            "maxPoints": 3,
+            "prerequisites": [
+                "iv_iron_skin"
+            ],
+            "effects": [
+                {
+                    "type": "wave_start_shield",
+                    "value": 15,
+                    "perPoint": true
+                }
+            ],
+            "isKeystone": false
+        },
+        {
+            "id": "iv_resilience",
+            "name": "Resilience",
+            "description": "+3 Resistance per point",
+            "branch": "iron_veil",
+            "tier": 2,
+            "maxPoints": 5,
+            "prerequisites": [
+                "iv_vitality"
+            ],
+            "modifiers": {
+                "res": 3
+            },
+            "effects": [],
+            "isKeystone": false
+        },
+        {
+            "id": "iv_retaliation",
+            "name": "Retaliation",
+            "description": "When hit, apply 1 Vulnerable stack to attacker",
+            "branch": "iron_veil",
+            "tier": 3,
+            "maxPoints": 3,
+            "prerequisites": [
+                "iv_aegis"
+            ],
+            "effects": [
+                {
+                    "type": "retaliate_vulnerable",
+                    "value": 1,
+                    "perPoint": true
+                }
+            ],
+            "isKeystone": false
+        },
+        {
+            "id": "iv_fortitude",
+            "name": "Fortitude",
+            "description": "+5% Max HP per point",
+            "branch": "iron_veil",
+            "tier": 3,
+            "maxPoints": 5,
+            "prerequisites": [
+                "iv_resilience"
+            ],
+            "modifiers": {
+                "maxHpPercent": 0.05
+            },
+            "effects": [],
+            "isKeystone": false
+        },
+        {
+            "id": "iv_unbreakable",
+            "name": "Unbreakable",
+            "description": "KEYSTONE: Below 30% HP: +20% DR, +15% Lifesteal (once/wave)",
+            "branch": "iron_veil",
+            "tier": 5,
+            "maxPoints": 1,
+            "prerequisites": [
+                "iv_retaliation",
+                "iv_fortitude"
+            ],
+            "effects": [
+                {
+                    "type": "low_hp_damage_reduction",
+                    "value": 0.20,
+                    "perPoint": false
+                },
+                {
+                    "type": "low_hp_lifesteal",
+                    "value": 0.15,
+                    "perPoint": false
+                }
+            ],
+            "isKeystone": true,
+            "keystoneId": "unbreakable"
+        }
+    ]
+}

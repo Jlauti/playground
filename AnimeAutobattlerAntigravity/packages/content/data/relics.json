@@ -1,0 +1,67 @@
+{
+    "version": "1.0.0",
+    "relics": [
+        {
+            "id": "relic_bloodline",
+            "name": "Bloodline Legacy",
+            "description": "Start with +20% Attack and +10% Lifesteal",
+            "modifiers": {
+                "atkPercent": 0.20,
+                "lifesteal": 0.10
+            }
+        },
+        {
+            "id": "relic_iron_fortress",
+            "name": "Iron Fortress",
+            "description": "Start with +30 Armor and +50 Max HP",
+            "modifiers": {
+                "arm": 30,
+                "maxHp": 50
+            }
+        },
+        {
+            "id": "relic_swift_shadow",
+            "name": "Swift Shadow",
+            "description": "Start with +25% Attack Speed and +10% Evasion",
+            "modifiers": {
+                "attackSpeedPercent": 0.25,
+                "evasion": 0.10
+            }
+        },
+        {
+            "id": "relic_critical_eye",
+            "name": "Critical Eye",
+            "description": "Start with +15% Crit Chance and +50% Crit Damage",
+            "modifiers": {
+                "critChance": 0.15,
+                "critMultiplier": 0.50
+            }
+        },
+        {
+            "id": "relic_gold_magnet",
+            "name": "Gold Magnet",
+            "description": "+50% Gold from all sources, +1 skill point",
+            "effects": [
+                {
+                    "type": "gold_bonus",
+                    "value": 0.50
+                },
+                {
+                    "type": "bonus_skill_points",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "id": "relic_phoenix_feather",
+            "name": "Phoenix Feather",
+            "description": "Revive once per run with 50% HP",
+            "effects": [
+                {
+                    "type": "run_revive",
+                    "value": 0.50
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,207 @@
+{
+    "version": "1.0.0",
+    "perks": [
+        {
+            "id": "perk_glass_cannon",
+            "name": "Glass Cannon",
+            "description": "+25% ATK, -15% Max HP",
+            "rarity": "rare",
+            "modifiers": {
+                "atkPercent": 0.25,
+                "maxHpPercent": -0.15
+            },
+            "tags": [
+                "offensive",
+                "risky"
+            ]
+        },
+        {
+            "id": "perk_thick_skin",
+            "name": "Thick Skin",
+            "description": "+10 Armor",
+            "rarity": "common",
+            "modifiers": {
+                "arm": 10
+            },
+            "tags": [
+                "defensive"
+            ]
+        },
+        {
+            "id": "perk_bloodthirst",
+            "name": "Bloodthirst",
+            "description": "+8% Lifesteal",
+            "rarity": "rare",
+            "modifiers": {
+                "lifesteal": 0.08
+            },
+            "tags": [
+                "sustain"
+            ]
+        },
+        {
+            "id": "perk_nimble",
+            "name": "Nimble",
+            "description": "+10% Attack Speed",
+            "rarity": "common",
+            "modifiers": {
+                "attackSpeedPercent": 0.10
+            },
+            "tags": [
+                "offensive"
+            ]
+        },
+        {
+            "id": "perk_lucky_strike",
+            "name": "Lucky Strike",
+            "description": "+8% Crit Chance",
+            "rarity": "common",
+            "modifiers": {
+                "critChance": 0.08
+            },
+            "tags": [
+                "offensive"
+            ]
+        },
+        {
+            "id": "perk_executioner",
+            "name": "Executioner",
+            "description": "+40% Crit Damage",
+            "rarity": "rare",
+            "modifiers": {
+                "critMultiplier": 0.40
+            },
+            "tags": [
+                "offensive"
+            ]
+        },
+        {
+            "id": "perk_iron_will",
+            "name": "Iron Will",
+            "description": "+50 Max HP",
+            "rarity": "common",
+            "modifiers": {
+                "maxHp": 50
+            },
+            "tags": [
+                "defensive"
+            ]
+        },
+        {
+            "id": "perk_arcane_barrier",
+            "name": "Arcane Barrier",
+            "description": "+15 Resistance",
+            "rarity": "common",
+            "modifiers": {
+                "res": 15
+            },
+            "tags": [
+                "defensive"
+            ]
+        },
+        {
+            "id": "perk_focused_strikes",
+            "name": "Focused Strikes",
+            "description": "+8 ATK",
+            "rarity": "common",
+            "modifiers": {
+                "atk": 8
+            },
+            "tags": [
+                "offensive"
+            ]
+        },
+        {
+            "id": "perk_venomous",
+            "name": "Venomous",
+            "description": "Attacks apply 2 Poison stacks",
+            "rarity": "rare",
+            "effects": [
+                {
+                    "type": "poison_on_hit",
+                    "value": 2
+                }
+            ],
+            "tags": [
+                "dot",
+                "offensive"
+            ]
+        },
+        {
+            "id": "perk_berserker",
+            "name": "Berserker",
+            "description": "+1% ATK for each 1% HP missing",
+            "rarity": "epic",
+            "effects": [
+                {
+                    "type": "low_hp_atk_bonus",
+                    "value": 0.01
+                }
+            ],
+            "tags": [
+                "offensive",
+                "risky"
+            ]
+        },
+        {
+            "id": "perk_second_wind",
+            "name": "Second Wind",
+            "description": "Heal 20% Max HP when dropping below 25% (once/wave)",
+            "rarity": "epic",
+            "effects": [
+                {
+                    "type": "low_hp_heal",
+                    "value": 0.20
+                }
+            ],
+            "tags": [
+                "sustain",
+                "defensive"
+            ]
+        },
+        {
+            "id": "perk_gold_digger",
+            "name": "Gold Digger",
+            "description": "+25% Gold from enemies",
+            "rarity": "rare",
+            "effects": [
+                {
+                    "type": "gold_bonus",
+                    "value": 0.25
+                }
+            ],
+            "tags": [
+                "utility"
+            ]
+        },
+        {
+            "id": "perk_quick_learner",
+            "name": "Quick Learner",
+            "description": "+15% XP from enemies",
+            "rarity": "rare",
+            "effects": [
+                {
+                    "type": "xp_bonus",
+                    "value": 0.15
+                }
+            ],
+            "tags": [
+                "utility"
+            ]
+        },
+        {
+            "id": "perk_phantom_blade",
+            "name": "Phantom Blade",
+            "description": "+5% Evasion, +5% Crit Chance",
+            "rarity": "epic",
+            "modifiers": {
+                "evasion": 0.05,
+                "critChance": 0.05
+            },
+            "tags": [
+                "offensive",
+                "defensive"
+            ]
+        }
+    ]
+}

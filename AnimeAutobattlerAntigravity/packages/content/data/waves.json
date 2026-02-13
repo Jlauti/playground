@@ -1,0 +1,201 @@
+{
+    "version": "1.0.0",
+    "act": "Shattered Gate",
+    "waves": [
+        {
+            "waveNumber": 1,
+            "name": "First Contact",
+            "description": "The shadows stir as you approach the gate.",
+            "enemies": [
+                {
+                    "templateId": "shadow_imp",
+                    "count": 3
+                }
+            ],
+            "rewards": {
+                "xpBase": 50,
+                "goldBase": 30,
+                "itemDropChance": 0.10
+            }
+        },
+        {
+            "waveNumber": 2,
+            "name": "Gate Guards",
+            "description": "Sentries awaken to challenge your advance.",
+            "enemies": [
+                {
+                    "templateId": "shadow_imp",
+                    "count": 2
+                },
+                {
+                    "templateId": "gate_sentry",
+                    "count": 1
+                }
+            ],
+            "rewards": {
+                "xpBase": 70,
+                "goldBase": 40,
+                "itemDropChance": 0.15
+            }
+        },
+        {
+            "waveNumber": 3,
+            "name": "Stalkers",
+            "description": "Predators emerge from the void between.",
+            "enemies": [
+                {
+                    "templateId": "void_stalker",
+                    "count": 2
+                },
+                {
+                    "templateId": "shadow_imp",
+                    "count": 2
+                }
+            ],
+            "rewards": {
+                "xpBase": 90,
+                "goldBase": 50,
+                "itemDropChance": 0.15
+            }
+        },
+        {
+            "waveNumber": 4,
+            "name": "Fallen Knights",
+            "description": "Warriors who once defended this place now bar your path.",
+            "enemies": [
+                {
+                    "templateId": "corrupted_knight",
+                    "count": 2
+                },
+                {
+                    "templateId": "gate_sentry",
+                    "count": 1
+                }
+            ],
+            "rewards": {
+                "xpBase": 110,
+                "goldBase": 60,
+                "itemDropChance": 0.20
+            }
+        },
+        {
+            "waveNumber": 5,
+            "name": "Plague Bearers",
+            "description": "Disease and rot spread before you.",
+            "enemies": [
+                {
+                    "templateId": "plague_carrier",
+                    "count": 2
+                },
+                {
+                    "templateId": "blood_cultist",
+                    "count": 2
+                }
+            ],
+            "rewards": {
+                "xpBase": 130,
+                "goldBase": 70,
+                "itemDropChance": 0.20
+            }
+        },
+        {
+            "waveNumber": 6,
+            "name": "Elite Assault",
+            "description": "Stronger foes with dark enhancements appear.",
+            "enemies": [
+                {
+                    "templateId": "void_stalker",
+                    "count": 1,
+                    "isElite": true,
+                    "affixCount": 1
+                },
+                {
+                    "templateId": "corrupted_knight",
+                    "count": 2
+                }
+            ],
+            "rewards": {
+                "xpBase": 160,
+                "goldBase": 85,
+                "itemDropChance": 0.25
+            }
+        },
+        {
+            "waveNumber": 7,
+            "name": "Nightmare Realm",
+            "description": "Reality warps as nightmare creatures manifest.",
+            "enemies": [
+                {
+                    "templateId": "nightmare_fiend",
+                    "count": 2
+                },
+                {
+                    "templateId": "wraith",
+                    "count": 2
+                }
+            ],
+            "rewards": {
+                "xpBase": 180,
+                "goldBase": 100,
+                "itemDropChance": 0.25
+            }
+        },
+        {
+            "waveNumber": 8,
+            "name": "Iron Defense",
+            "description": "Massive constructs block your advance.",
+            "enemies": [
+                {
+                    "templateId": "iron_golem",
+                    "count": 1
+                },
+                {
+                    "templateId": "gate_sentry",
+                    "count": 2,
+                    "isElite": true,
+                    "affixCount": 1
+                }
+            ],
+            "rewards": {
+                "xpBase": 200,
+                "goldBase": 115,
+                "itemDropChance": 0.30
+            }
+        },
+        {
+            "waveNumber": 9,
+            "name": "Arrow Storm",
+            "description": "A rain of dark projectiles descends.",
+            "enemies": [
+                {
+                    "templateId": "dark_archer",
+                    "count": 3,
+                    "isElite": true,
+                    "affixCount": 1
+                },
+                {
+                    "templateId": "void_stalker",
+                    "count": 1
+                }
+            ],
+            "rewards": {
+                "xpBase": 220,
+                "goldBase": 130,
+                "itemDropChance": 0.30
+            }
+        },
+        {
+            "waveNumber": 10,
+            "name": "The Warden Awaits",
+            "description": "The final guardian stands before the Shattered Gate.",
+            "isBossWave": true,
+            "bossId": "kurogane_warden",
+            "enemies": [],
+            "rewards": {
+                "xpBase": 300,
+                "goldBase": 200,
+                "itemDropChance": 1.0
+            }
+        }
+    ]
+}
