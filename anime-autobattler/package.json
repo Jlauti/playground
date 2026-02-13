@@ -1,0 +1,17 @@
+{
+  "name": "anime-autobattler",
+  "version": "0.0.1",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "dev": "pnpm --filter @anime-autobattler/web dev",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "sim:benchmark": "pnpm --filter @anime-autobattler/tools benchmark"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0"
+  }
+}
+
